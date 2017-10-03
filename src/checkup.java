@@ -3,8 +3,14 @@ public class checkup {
 
 
                 CarDoor nodata = new CarDoor();
+                CarDoor carDoor = new CarDoor("open", "closed");
+                CarDoor.doorcondition();
+                CarDoor.windowstate();
+                CarDoor.changeDoorcondition();
+                CarDoor.changeWindowstate();
 
-
-                System.out.println();
+                //System.out.println(CarDoor);
+                //System.out.println(.doorcondition);
+                //System.out.println(.changeDoorcondition);
             }
 }
