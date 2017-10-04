@@ -1,16 +1,14 @@
 public class checkup {
             public static void main(String[] args){
 
+                CarDoor carDoor = new CarDoor();
 
-                CarDoor nodata = new CarDoor();
-                CarDoor carDoor = new CarDoor("open", "closed");
-                CarDoor.doorcondition();
-                CarDoor.windowstate();
-                CarDoor.changeDoorcondition();
-                CarDoor.changeWindowstate();
+                System.out.println(carDoor);
+                System.out.println(carDoor.changeDoorcondition());
+                System.out.println(carDoor.changeWindowstate());
+                System.out.println(carDoor.closeDoorcondition());
+                System.out.println(carDoor.openDoorcondition());
 
-                //System.out.println(CarDoor);
-                //System.out.println(.doorcondition);
-                //System.out.println(.changeDoorcondition);
+
             }
 }
