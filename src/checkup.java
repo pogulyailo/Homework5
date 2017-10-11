@@ -9,6 +9,13 @@ public class checkup {
                 System.out.println(carDoor.closeDoorcondition());
                 System.out.println(carDoor.openDoorcondition());
 
+                CarWheel carWheel = new CarWheel();
+                int integrity;
+                int percen = 17;
+                System.out.println(carWheel);
+                System.out.println(carWheel.newTire());
+                System.out.println(carWheel.clearTire(17));
+
 
             }
 }
