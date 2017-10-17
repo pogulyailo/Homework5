@@ -1,4 +1,4 @@
-/*import java.util.Date;
+import java.util.Date;
 
 public class Car {
     private Date datemanufacture;
@@ -84,23 +84,32 @@ public class Car {
     public void Disembarkallpassengers (){
            this.numberpassengersmoment = 0;
     }
-    public int getDoorarray(int i) { // получить дверь по индексу
-        return this.doorarray.length;
-    }
-    public int getWheelarray(int i){ //получить колесо по индексу
-        return this.whellarray.length;
+
+    public CarWheel[] getWhellarray() {
+        whellarray = new CarWheel[4];
+        return whellarray;
     }
 
-    public void Removeallwheels (){ // снять все колеса
-        for (CarDoor : doorarray = CarWheel[0]) {
+    public void setWhellarray(CarWheel[] whellarray) {
+        this.whellarray = whellarray;
+    }
 
-        }
+    public CarDoor[] getDoorarray() {
+        doorarray = new CarDoor[5];
+        return doorarray;
+    }
+
+    public void removeAllWheels(){
 
     }
+
+    public void setDoorarray(CarDoor[] doorarray) {
+        this.doorarray = doorarray;
+    }
+
     public void AddWheel(int quantity){  // установить на машину Х-новіх колес
         for (int i = 0; i < quantity; i++) {
 
         }
     }
 }
-*/
