@@ -87,7 +87,16 @@ public class Car {
 
     public CarWheel[] getWhellarray() {
         whellarray = new CarWheel[4];
+        for ( int i = 0; i < whellarray.length;i++){
+            whellarray [i] = new CarWheel();
+        }
         return whellarray;
+    }
+
+    public CarWheel getCarWheelByIndex (int i){
+        CarWheel[] whellarray = getWhellarray();
+
+        return whellarray[i];
     }
 
     public void setWhellarray(CarWheel[] whellarray) {
@@ -96,20 +105,47 @@ public class Car {
 
     public CarDoor[] getDoorarray() {
         doorarray = new CarDoor[5];
+        for (int i = 0; i < doorarray.length; i++){
+            doorarray[i] = new CarDoor();
+        }
         return doorarray;
+    }
+    public CarDoor getCarDoorByIndex (int i){
+        CarDoor[] doorarray = getDoorarray();
+        return doorarray[i];
     }
 
     public void removeAllWheels(){
-
-    }
-
-    public void setDoorarray(CarDoor[] doorarray) {
-        this.doorarray = doorarray;
-    }
-
-    public void AddWheel(int quantity){  // установить на машину Х-новіх колес
-        for (int i = 0; i < quantity; i++) {
-
+        CarWheel[] whellarray = getWhellarray();
+        for (int i =0; i < whellarray.length; i++){
+            whellarray[i] = null;
         }
+    }
+        public void setDoorarray(CarDoor[] doorarray) {
+        this.doorarray = doorarray;
+            }
+
+    public void addWheel(int quantity){  // установить на машину Х-новіх колес
+        CarWheel[] whellarray = getWhellarray();
+        CarWheel [] newWheelarray = new CarWheel[whellarray.length + quantity];
+        for (int i = 0; i < newWheelarray.length; i++) {
+            newWheelarray [i] = new CarWheel();
+        }
+        this.whellarray = newWheelarray;
+    }
+    public int getMaxspeed (){
+        if (numberpassengersmoment == 0) {
+            currentspeed = 0;
+        }else {
+            CarWheel[] whellarray = getWhellarray();
+          double minintegrity = 1.0;
+          for (int i = 0; i < whellarray.length; i++){
+              if (whellarray[i].getIntegrity() < minintegrity){
+                  minintegrity = whellarray [i].getIntegrity();
+              }
+          }
+         currentspeed = (int) (minintegrity * maxspeed);
+        }
+          return currentspeed;
     }
 }
