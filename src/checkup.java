@@ -2,7 +2,7 @@ import java.time.Instant;
 import java.util.Date;
 
 public class checkup {
-            public void main(String[] args){
+            public static void main(String[] args){
 
                 CarDoor carDoor = new CarDoor();
 
@@ -20,14 +20,14 @@ public class checkup {
                 System.out.println(carWheel.clearTire(17));
 
 
-                String date;
-                Car car = new Car(date);
+                String date = "";
+                Car car = new Car("volvo", 180, 7, 4, 2, 100);
                 System.out.println(car.getCurrentspeed());
                 System.out.println(car.putPassenger());
                 System.out.println(car.disEmbarkpassenger());
                 System.out.println(car.disEmbarkallpassengers());
                 System.out.println(car.getCarWheelByIndex(3));
-                System.out.println(car.getCarDoorByIndex(5));
+                System.out.println(car.getCarDoorByIndex(2));
                 System.out.println(car.removeAllWheels());
                 car.addWheels(3);
                 System.out.println(car.getWhellarray().length);

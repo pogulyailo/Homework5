@@ -104,9 +104,9 @@ public class Car {
             return "one passenger is landed";
         }
     }
-    public String disEmbarkallpassengers (){
+    public int disEmbarkallpassengers (){
            this.numberpassengersmoment = 0;
-        System.out.println("all passenger is landed" );
+        return 0;
     }
 
     public CarWheel[] getWhellarray() {
