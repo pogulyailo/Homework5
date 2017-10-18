@@ -1,4 +1,6 @@
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class Car {
     private Date datemanufacture;
@@ -15,7 +17,9 @@ public class Car {
     private CarWheel[] whellarray;
     private CarDoor[] doorarray;
 
+
     public Car(String enginestype, int maxspeed, int accelerationtime, int serviceability, int numberpassengersmoment, int currentspeed) {
+        this.enginestype = enginestype;
         this.maxspeed = maxspeed;
         this.enginestype = enginestype;
         this.accelerationtime = accelerationtime;
@@ -24,8 +28,17 @@ public class Car {
         this.currentspeed = currentspeed;
     }
 
-    public Car(Date datemanufacture) {
+    Date date = new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime();
+    {
         this.datemanufacture = datemanufacture;
+    }
+
+    public String getEnginestype() {
+        return enginestype;
+    }
+
+    public void setEnginestype(String enginestype) {
+        this.enginestype = enginestype;
     }
 
     public int getMaxSpeed() {
@@ -68,21 +81,32 @@ public class Car {
         this.currentspeed = currentspeed;
     }
 
-    public void ChangeSpeed(int change) {
+    public void changeSpeed(int change) {
         if (0 <= currentspeed && currentspeed < maxspeed) {
             this.currentspeed = change;
         } else {
-            System.out.println("Value is out of range!");
+            return;
+        }
+        System.out.println("Value is out of range!");
+    }
+
+    public String putPassenger() {
+        if (numberpassengersmoment < serviceability) this.numberpassengersmoment++;
+        {
+            this.numberpassengersmoment = numberpassengersmoment;
+            return "one other passenger was added";
         }
     }
-    public void Putpassenger (){
-        if (numberpassengersmoment < serviceability) this.numberpassengersmoment++;
-            }
-    public void Disembarkpassenger (){
+    public String disEmbarkpassenger (){
         if (numberpassengersmoment > 0) this.numberpassengersmoment--;
+        {
+            this.numberpassengersmoment = numberpassengersmoment;
+            return "one passenger is landed";
+        }
     }
-    public void Disembarkallpassengers (){
+    public String disEmbarkallpassengers (){
            this.numberpassengersmoment = 0;
+        System.out.println("all passenger is landed" );
     }
 
     public CarWheel[] getWhellarray() {
@@ -115,24 +139,28 @@ public class Car {
         return doorarray[i];
     }
 
-    public void removeAllWheels(){
+    public String removeAllWheels(){
         CarWheel[] whellarray = getWhellarray();
         for (int i =0; i < whellarray.length; i++){
             whellarray[i] = null;
         }
-    }
+        return "added to 4 wheels 3 = 7 wheels on the car";
+            }
         public void setDoorarray(CarDoor[] doorarray) {
         this.doorarray = doorarray;
             }
 
-    public void addWheel(int quantity){  // установить на машину Х-новіх колес
+    public void addWheels(int quantity) {
         CarWheel[] whellarray = getWhellarray();
-        CarWheel [] newWheelarray = new CarWheel[whellarray.length + quantity];
+        CarWheel[] newWheelarray = new CarWheel[whellarray.length + quantity];
         for (int i = 0; i < newWheelarray.length; i++) {
-            newWheelarray [i] = new CarWheel();
+            newWheelarray[i] = new CarWheel();
         }
-        this.whellarray = newWheelarray;
-    }
+            this.whellarray = newWheelarray;
+            {
+                return;
+            }
+        }
     public int getMaxspeed (){
         if (numberpassengersmoment == 0) {
             currentspeed = 0;

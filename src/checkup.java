@@ -1,5 +1,8 @@
+import java.time.Instant;
+import java.util.Date;
+
 public class checkup {
-            public static void main(String[] args){
+            public void main(String[] args){
 
                 CarDoor carDoor = new CarDoor();
 
@@ -16,6 +19,18 @@ public class checkup {
                 System.out.println(carWheel.newTire());
                 System.out.println(carWheel.clearTire(17));
 
+
+                String date;
+                Car car = new Car(date);
+                System.out.println(car.getCurrentspeed());
+                System.out.println(car.putPassenger());
+                System.out.println(car.disEmbarkpassenger());
+                System.out.println(car.disEmbarkallpassengers());
+                System.out.println(car.getCarWheelByIndex(3));
+                System.out.println(car.getCarDoorByIndex(5));
+                System.out.println(car.removeAllWheels());
+                System.out.println(car.addWheels(3);
+                System.out.println(car.getMaxspeed());
 
             }
 }
