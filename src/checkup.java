@@ -29,7 +29,8 @@ public class checkup {
                 System.out.println(car.getCarWheelByIndex(3));
                 System.out.println(car.getCarDoorByIndex(5));
                 System.out.println(car.removeAllWheels());
-                System.out.println(car.addWheels(3);
+                car.addWheels(3);
+                System.out.println(car.getWhellarray().length);
                 System.out.println(car.getMaxspeed());
 
             }
