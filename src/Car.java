@@ -14,7 +14,7 @@ public class Car {
 
     private int currentspeed;
 
-    private CarWheel[] whellarray;
+    private CarWheel[] whellarray = new CarWheel[0];
     private CarDoor[] doorarray;
 
 
@@ -104,17 +104,13 @@ public class Car {
             return "one passenger is landed";
         }
     }
-    public int disEmbarkallpassengers (){
+    public String disEmbarkallpassengers (){
            this.numberpassengersmoment = 0;
-        return 0;
+        return " number of passengers - " + 0;
     }
 
     public CarWheel[] getWhellarray() {
-        whellarray = new CarWheel[4];
-        for ( int i = 0; i < whellarray.length;i++){
-            whellarray [i] = new CarWheel();
-        }
-        return whellarray;
+           return whellarray;
     }
 
     public CarWheel getCarWheelByIndex (int i){
@@ -144,23 +140,22 @@ public class Car {
         for (int i =0; i < whellarray.length; i++){
             whellarray[i] = null;
         }
-        return "added to 4 wheels 3 = 7 wheels on the car";
-            }
+        return "number of wheels by car - " + whellarray;
+    }
         public void setDoorarray(CarDoor[] doorarray) {
         this.doorarray = doorarray;
             }
 
     public void addWheels(int quantity) {
-        CarWheel[] whellarray = getWhellarray();
         CarWheel[] newWheelarray = new CarWheel[whellarray.length + quantity];
-        for (int i = 0; i < newWheelarray.length; i++) {
+        for (int i = 0; i < whellarray.length; i++) {
+            newWheelarray[i] = whellarray[i];
+        }
+        for (int i = whellarray.length; i < newWheelarray.length; i++){
             newWheelarray[i] = new CarWheel();
         }
             this.whellarray = newWheelarray;
-            {
-                return;
-            }
-        }
+   }
     public int getMaxspeed (){
         if (numberpassengersmoment == 0) {
             currentspeed = 0;
@@ -176,4 +171,10 @@ public class Car {
         }
           return currentspeed;
     }
+    public void show(){
+        System.out.println("number of wheels by car - " + whellarray);
+
+    }
 }
+
+

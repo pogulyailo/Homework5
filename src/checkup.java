@@ -6,31 +6,36 @@ public class checkup {
 
                 CarDoor carDoor = new CarDoor();
 
-                System.out.println(carDoor);
-                System.out.println(carDoor.changeDoorcondition());
-                System.out.println(carDoor.changeWindowstate());
-                System.out.println(carDoor.closeDoorcondition());
-                System.out.println(carDoor.openDoorcondition());
+                carDoor.show();
+                carDoor.changeDoorcondition();
+                carDoor.changeWindowstate();
+                carDoor.show();
+                carDoor.closeDoorcondition();
+                carDoor.openDoorcondition();
 
                 CarWheel carWheel = new CarWheel();
                 int integrity;
                 int percen = 17;
-                System.out.println(carWheel);
-                System.out.println(carWheel.newTire());
-                System.out.println(carWheel.clearTire(17));
+                carWheel.show();
+                carWheel.newTire();
+                carWheel.clearTire(17);
+                carWheel.show();
 
 
                 String date = "";
-                Car car = new Car("volvo", 180, 7, 4, 2, 100);
+                Car car = new Car("volvo", 180, 7, 2, 4, 90);
                 System.out.println(car.getCurrentspeed());
                 System.out.println(car.putPassenger());
                 System.out.println(car.disEmbarkpassenger());
                 System.out.println(car.disEmbarkallpassengers());
-                System.out.println(car.getCarWheelByIndex(3));
-                System.out.println(car.getCarDoorByIndex(2));
-                System.out.println(car.removeAllWheels());
+                car.getCarDoorByIndex(1).show();
+                car.show();
+                System.out.println(car.getWhellarray().length);
+                System.out.println(car.getMaxspeed());
+                car.addWheels(2);
                 car.addWheels(3);
                 System.out.println(car.getWhellarray().length);
+                car.getCarWheelByIndex(3).show();
                 System.out.println(car.getMaxspeed());
 
             }

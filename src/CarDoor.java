@@ -23,35 +23,39 @@ public class CarDoor {
     public void setWindowstate(boolean windowstate) {
         this.windowstate = windowstate;
     }
-    public boolean closeDoorcondition() {
+    public void closeDoorcondition() {
         this.doorcondition = false;
-        return doorcondition;
+
     }
-    public boolean openDoorcondition() {
+    public void openDoorcondition() {
         this.doorcondition = true;
-        return doorcondition;
+
     }
-    public boolean changeDoorcondition() {
+    public void changeDoorcondition() {
         if (this.doorcondition) {
-            return this.doorcondition = false;
+            this.doorcondition = false;
         } else {
-            return this.doorcondition = true;
+            this.doorcondition = true;
         }
     }
-    public boolean closeWindow() {
+    public void closeWindow() {
         this.windowstate = false;
-        return windowstate;
+
     }
 
-    public boolean openWidow() {
+    public void openWidow() {
         this.windowstate = true;
-        return windowstate;
+
     }
-    public boolean changeWindowstate() {
+    public void changeWindowstate() {
         if (this.windowstate) {
-            return this.windowstate = false;
+            this.windowstate = false;
         } else {
-            return this.windowstate = true;
+            this.windowstate = true;
         }
+    }
+    public void show(){
+        System.out.println(" door condition " + doorcondition);
+        System.out.println(" window state " + windowstate);
     }
 }

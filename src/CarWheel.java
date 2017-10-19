@@ -17,14 +17,21 @@ public class CarWheel {
         this.integrity = integrity;
     }
 
-    public double newTire() {
+    public void newTire() {
         this.integrity = 1.0;
-        return integrity;
     }
 
-    public int clearTire(int percent) {
-        this.integrity = (integrity < percent / 100 ? integrity : percent / 100);
-        return percent;
+    public void clearTire(int percent) {
+        for (int i = 0; i < 100; i++){
+            
+
+        }
+
+        //this.integrity = (integrity < percent / 100f ? integrity : percent / 100f);
+    }
+
+    public void show(){
+        System.out.println(" bus condition " + integrity);
     }
 }
 
