@@ -22,12 +22,10 @@ public class CarWheel {
     }
 
     public void clearTire(int percent) {
-        for (int i = 0; i < 100; i++){
-            
+        for (int i = 0; i < 100; i++) {
 
+            this.integrity = (integrity < percent / 100f ? integrity : percent / 100f);
         }
-
-        //this.integrity = (integrity < percent / 100f ? integrity : percent / 100f);
     }
 
     public void show(){

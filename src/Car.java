@@ -29,6 +29,7 @@ public class Car {
     }
 
     Date date = new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime();
+
     {
         this.datemanufacture = datemanufacture;
     }
@@ -84,6 +85,7 @@ public class Car {
     public void changeSpeed(int change) {
         if (0 <= currentspeed && currentspeed < maxspeed) {
             this.currentspeed = change;
+            System.out.println("Current speed changed -" + change);
         } else {
             return;
         }
@@ -97,23 +99,25 @@ public class Car {
             return "one other passenger was added";
         }
     }
-    public String disEmbarkpassenger (){
+
+    public String disEmbarkpassenger() {
         if (numberpassengersmoment > 0) this.numberpassengersmoment--;
         {
             this.numberpassengersmoment = numberpassengersmoment;
             return "one passenger is landed";
         }
     }
-    public String disEmbarkallpassengers (){
-           this.numberpassengersmoment = 0;
+
+    public String disEmbarkallpassengers() {
+        this.numberpassengersmoment = 0;
         return " number of passengers - " + 0;
     }
 
     public CarWheel[] getWhellarray() {
-           return whellarray;
+        return whellarray;
     }
 
-    public CarWheel getCarWheelByIndex (int i){
+    public CarWheel getCarWheelByIndex(int i) {
         CarWheel[] whellarray = getWhellarray();
 
         return whellarray[i];
@@ -125,56 +129,54 @@ public class Car {
 
     public CarDoor[] getDoorarray() {
         doorarray = new CarDoor[5];
-        for (int i = 0; i < doorarray.length; i++){
+        for (int i = 0; i < doorarray.length; i++) {
             doorarray[i] = new CarDoor();
         }
         return doorarray;
     }
-    public CarDoor getCarDoorByIndex (int i){
+
+    public CarDoor getCarDoorByIndex(int i) {
         CarDoor[] doorarray = getDoorarray();
         return doorarray[i];
     }
 
-    public String removeAllWheels(){
+    public String removeAllWheels() {
         CarWheel[] whellarray = getWhellarray();
-        for (int i =0; i < whellarray.length; i++){
+        for (int i = 0; i < whellarray.length; i++) {
             whellarray[i] = null;
         }
-        return "number of wheels by car - " + whellarray;
+        return "number of wheels by car - " + 0;
     }
-        public void setDoorarray(CarDoor[] doorarray) {
+
+    public void setDoorarray(CarDoor[] doorarray) {
         this.doorarray = doorarray;
-            }
+    }
 
     public void addWheels(int quantity) {
         CarWheel[] newWheelarray = new CarWheel[whellarray.length + quantity];
         for (int i = 0; i < whellarray.length; i++) {
             newWheelarray[i] = whellarray[i];
         }
-        for (int i = whellarray.length; i < newWheelarray.length; i++){
+        for (int i = whellarray.length; i < newWheelarray.length; i++) {
             newWheelarray[i] = new CarWheel();
         }
-            this.whellarray = newWheelarray;
-   }
-    public int getMaxspeed (){
+        this.whellarray = newWheelarray;
+    }
+
+    public int getMaxspeed() {
         if (numberpassengersmoment == 0) {
             currentspeed = 0;
-        }else {
+        } else {
             CarWheel[] whellarray = getWhellarray();
-          double minintegrity = 1.0;
-          for (int i = 0; i < whellarray.length; i++){
-              if (whellarray[i].getIntegrity() < minintegrity){
-                  minintegrity = whellarray [i].getIntegrity();
-              }
-          }
-         currentspeed = (int) (minintegrity * maxspeed);
-        }
-          return currentspeed;
-    }
-    public void show(){
-        System.out.println("number of wheels by car - " + whellarray);
-
+            double minintegrity = 1.0;
+            for (int i = 0; i < whellarray.length; i++) {
+                if (whellarray[i].getIntegrity() < minintegrity) {
+                    minintegrity = whellarray[i].getIntegrity();
+                }
+            }
+            currentspeed = (int) (minintegrity * maxspeed);
+            }
+        System.out.println("current max speed -" + maxspeed);
+        return  currentspeed;
     }
 }
-
-
