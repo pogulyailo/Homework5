@@ -28,12 +28,12 @@ public class checkup {
                 System.out.println(car.putPassenger());
                 System.out.println(car.disEmbarkpassenger());
                 System.out.println(car.disEmbarkallpassengers());
-                car.getCarDoorByIndex(3).show();
-                car.getCarWheelByIndex(4).show();
+                car.getCarDoorByIndex(2);
+                car.getCarWheelByIndex(2);
                 System.out.println(car.removeAllWheels());
                 System.out.println(car.getWhellarray().length);
+                car.addWheels(4);
                 car.addWheels(2);
-                car.addWheels(5);
                 System.out.println(car.getWhellarray().length);
                 System.out.println(car.getMaxspeed());
 

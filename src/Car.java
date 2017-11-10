@@ -14,11 +14,10 @@ public class Car {
 
     private int currentspeed;
 
-    private CarWheel[] whellarray = new CarWheel[0];
-    private CarDoor[] doorarray;
+    private CarWheel[] whellarray = new CarWheel[4];
+    private CarDoor[] doorarray = new CarDoor[5];
 
-
-    public Car(String enginestype, int maxspeed, int accelerationtime, int serviceability, int numberpassengersmoment, int currentspeed) {
+       public Car(String enginestype, int maxspeed, int accelerationtime, int serviceability, int numberpassengersmoment, int currentspeed) {
         this.enginestype = enginestype;
         this.maxspeed = maxspeed;
         this.enginestype = enginestype;
@@ -26,6 +25,13 @@ public class Car {
         this.serviceability = serviceability;
         this.numberpassengersmoment = numberpassengersmoment;
         this.currentspeed = currentspeed;
+
+        for(int i = 0; i <whellarray.length; i++){
+            whellarray[i] = new CarWheel();
+        }
+        for(int i = 0; i < doorarray.length; i++){
+            doorarray[i] = new CarDoor();
+        }
     }
 
     Date date = new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime();
@@ -110,17 +116,17 @@ public class Car {
 
     public String disEmbarkallpassengers() {
         this.numberpassengersmoment = 0;
-        return " number of passengers - " + 0;
+        return "number of passengers -" + 0;
     }
 
     public CarWheel[] getWhellarray() {
-        return whellarray;
+       return whellarray;
+
     }
 
     public CarWheel getCarWheelByIndex(int i) {
         CarWheel[] whellarray = getWhellarray();
-        System.out.println("wheel by index -" + whellarray[i]);
-        return whellarray[i];
+       return whellarray[i];
     }
 
     public void setWhellarray(CarWheel[] whellarray) {
@@ -137,8 +143,7 @@ public class Car {
 
     public CarDoor getCarDoorByIndex(int i) {
         CarDoor[] doorarray = getDoorarray();
-        System.out.println("door by index -" + doorarray[i]);
-        return doorarray[i];
+       return doorarray[i];
     }
 
     public String removeAllWheels() {
@@ -146,11 +151,12 @@ public class Car {
         for (int i = 0; i < whellarray.length; i++) {
             whellarray[i] = null;
         }
-        return "number of wheels by car - " + 0;
+        return "number of wheels by car - 0";
     }
 
     public void setDoorarray(CarDoor[] doorarray) {
         this.doorarray = doorarray;
+
     }
 
     public void addWheels(int quantity) {
@@ -180,10 +186,5 @@ public class Car {
         }
         System.out.println("current max speed -" + maxspeed);
         return currentspeed;
-
-    }
-    public void show(){
-        System.out.println("door by index -" + doorarray);
-        System.out.println("wheel by index -" + whellarray);
     }
 }
