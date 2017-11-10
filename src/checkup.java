@@ -24,17 +24,17 @@ public class checkup {
 
                 String date = "";
                 Car car = new Car("volvo", 180, 7, 2, 4, 90);
-                System.out.println(car.changeSpeed();
+                car.changeSpeed(90);
                 System.out.println(car.putPassenger());
                 System.out.println(car.disEmbarkpassenger());
                 System.out.println(car.disEmbarkallpassengers());
-                car.getCarDoorByIndex(1).show();
+                car.getCarDoorByIndex(3).show();
+                car.getCarWheelByIndex(4).show();
                 System.out.println(car.removeAllWheels());
                 System.out.println(car.getWhellarray().length);
-                car.addWheels(4);
-                car.addWheels(3);
+                car.addWheels(2);
+                car.addWheels(5);
                 System.out.println(car.getWhellarray().length);
-                car.getCarWheelByIndex(3).show();
                 System.out.println(car.getMaxspeed());
 
             }

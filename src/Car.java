@@ -87,9 +87,9 @@ public class Car {
             this.currentspeed = change;
             System.out.println("Current speed changed -" + change);
         } else {
+            System.out.println("Value is out of range!");
             return;
         }
-        System.out.println("Value is out of range!");
     }
 
     public String putPassenger() {
@@ -119,7 +119,7 @@ public class Car {
 
     public CarWheel getCarWheelByIndex(int i) {
         CarWheel[] whellarray = getWhellarray();
-
+        System.out.println("wheel by index -" + whellarray[i]);
         return whellarray[i];
     }
 
@@ -137,6 +137,7 @@ public class Car {
 
     public CarDoor getCarDoorByIndex(int i) {
         CarDoor[] doorarray = getDoorarray();
+        System.out.println("door by index -" + doorarray[i]);
         return doorarray[i];
     }
 
@@ -161,6 +162,7 @@ public class Car {
             newWheelarray[i] = new CarWheel();
         }
         this.whellarray = newWheelarray;
+        System.out.println("installed on the machine X wheels -" + quantity);
     }
 
     public int getMaxspeed() {
@@ -175,8 +177,13 @@ public class Car {
                 }
             }
             currentspeed = (int) (minintegrity * maxspeed);
-            }
+        }
         System.out.println("current max speed -" + maxspeed);
-        return  currentspeed;
+        return currentspeed;
+
+    }
+    public void show(){
+        System.out.println("door by index -" + doorarray);
+        System.out.println("wheel by index -" + whellarray);
     }
 }
